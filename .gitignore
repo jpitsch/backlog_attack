@@ -1,0 +1,12 @@
+# Log and temp
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+
+# env files containing secrets
+.env
+.env.local
+
+/.bundle
+/vendor/bundle
