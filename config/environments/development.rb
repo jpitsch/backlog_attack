@@ -62,4 +62,7 @@ Rails.application.configure do
 
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
+
+  config.twitch_client_id = "zj915m745gg7olqj6ez5dnm5ttq2rk"
+  config.twitch_client_secret = "dn2w20beo260v8yablxzv9w8b860ra"
 end
