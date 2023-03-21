@@ -5,20 +5,24 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+# Versions
+Ruby `3.01`
+Rails `7.x.x`
 
-* System dependencies
+# System dependencies
 
-* Configuration
+# Configuration
 
-* Database creation
+# Database creation
 
-* Database initialization
+Make sure the database is running and that the port is correctly set in the `config/database.yml` file.  Run `rails db:create` and verify no errors occur.
 
-* How to run the test suite
+# Database initialization
 
-* Services (job queues, cache servers, search engines, etc.)
+# How to run the test suite
 
-* Deployment instructions
+# Services (job queues, cache servers, search engines, etc.)
+
+# Deployment instructions
 
 * ...
