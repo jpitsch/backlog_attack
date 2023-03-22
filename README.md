@@ -15,7 +15,13 @@ Rails `7.x.x`
 
 # Database creation
 
-Make sure the database is running and that the port is correctly set in the `config/database.yml` file.  Run `rails db:create` and verify no errors occur.
+Make sure the database is running and that the port is correctly set in the `config/database.yml` file.  
+
+Run 
+- `rails db:create` 
+- `rails db:migrate`
+
+Verify there are no errors.
 
 # Database initialization
 
