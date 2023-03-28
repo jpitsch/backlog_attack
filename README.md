@@ -26,6 +26,10 @@ Verify there are no errors.
 # Database initialization
 
 # How to run the test suite
+`bundle exec rspec`
+
+## Gernerating fake data using Faker
+Go [here](https://github.com/faker-ruby/faker#generators) to see all the API list of generators.
 
 # Services (job queues, cache servers, search engines, etc.)
 
