@@ -1,4 +1,6 @@
 class Api::UsersController < ApplicationController
+  before_action :set_user, only: %i[show update destroy]
+
   def index
     @users = User.all
 
@@ -19,11 +21,14 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def show
+    render json: @user, status: :ok
+  end
+
   def update
-    user = User.find(params[:id])
-    if user
-      user.update_attributes(user_params)
-      render json: user
+    if @user
+      @user.update(user_params)
+      render json: @user
     else
       render json: { message: "BAD_REQUEST"}, status: :bad_request
     end
@@ -31,8 +36,8 @@ class Api::UsersController < ApplicationController
 
   def destroy
     begin
-      User.destroy(params[:id])
-      render status: :ok
+      @user.destroy
+      head :no_content
     rescue ActiveRecord::RecordNotFound
       render json: { message: "record not found" }, status: :bad_request
     rescue ActiveRecord::CatchAll
@@ -44,5 +49,9 @@ class Api::UsersController < ApplicationController
 
   def user_params
     params.permit(:user_name, :email)
+  end
+
+  def set_user
+    @user = User.find(params[:id])
   end
 end
