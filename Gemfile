@@ -6,11 +6,19 @@ ruby "3.0.1"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4"
 
-# Use sqlite3 as the database for Active Record
+# Use sqlite3 as the database for Active Record for Unit testing
 gem "sqlite3", "~> 1.4"
+
+# Use Postgres database for Active Record
+gem "pg", "~> 1.4"
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
+
+# Devise for Auth and JWT
+gem "devise"
+gem "devise-jwt"
+gem "jsonapi-serializer"
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 # gem "jbuilder"
@@ -50,6 +58,3 @@ group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 end
-
-
-gem "pg", "~> 1.4"

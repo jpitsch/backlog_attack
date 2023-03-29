@@ -5,6 +5,15 @@ Rails.application.routes.draw do
   root "application#index"
 
   namespace :api do
+    devise_for :users, path: '', path_names: {
+      sign_in: 'login',
+      sign_out: 'logout',
+      registration: 'signup'
+    },
+    controllers: {
+      sessions: 'api/sessions',
+      registrations: 'api/registrations'
+    }
     resources :users
   end
 end
