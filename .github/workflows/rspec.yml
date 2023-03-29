@@ -6,7 +6,7 @@ jobs:
   run-unit-tests:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Ruby set up
         uses: ruby/setup-ruby@v1
         with:
