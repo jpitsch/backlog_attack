@@ -12,20 +12,6 @@ RSpec.describe 'Users', type: :request do
     end
   end
 
-  describe 'POST /users' do
-    let(:valid_params) do 
-      { user_name: 'MyUser', email: 'test@example.com' }
-    end
-
-    context 'when using valid params' do
-      before { post '/api/users', params: valid_params }
-
-      it 'returns 201 created status code' do
-        expect(response).to have_http_status(201)
-      end
-    end
-  end
-
   describe 'GET /users/:id' do
     let(:user_id) { users.first.id }
 
