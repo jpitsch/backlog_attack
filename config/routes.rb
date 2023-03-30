@@ -1,19 +1,18 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  namespace :api, defaults: { format: :json } do
+    resources :users, only: %w[show]
+  end
 
-  # Defines the root path route ("/")
-  root "application#index"
-
-  namespace :api do
-    devise_for :users, path: '', path_names: {
-      sign_in: 'login',
-      sign_out: 'logout',
-      registration: 'signup'
+  devise_for :users,
+    defaults: { format: :json }, 
+    path: '', 
+    path_names: {
+      sign_in: 'api/login',
+      sign_out: 'api/logout',
+      registration: 'api/signup'
     },
     controllers: {
       sessions: 'api/sessions',
       registrations: 'api/registrations'
-    }
-    resources :users
-  end
+  }
 end
