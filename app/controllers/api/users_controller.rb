@@ -20,7 +20,7 @@ class Api::UsersController < ApplicationController
       @user.update(user_params)
       render json: @user
     else
-      render json: { message: "BAD_REQUEST"}, status: :bad_request
+      render json: { message: "BAD_REQUEST" }, status: :bad_request
     end
   end
 
