@@ -15,4 +15,8 @@ Rails.application.routes.draw do
       sessions: 'api/sessions',
       registrations: 'api/registrations'
   }
+
+  namespace :api do
+    resources :users
+  end
 end

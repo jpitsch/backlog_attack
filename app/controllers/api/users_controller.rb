@@ -1,6 +1,8 @@
 class Api::UsersController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_user, only: %i[show update destroy]
 
+  # Please remove oncce done this is for easy access to view data.
   def index
     @users = User.all
 
@@ -42,6 +44,6 @@ class Api::UsersController < ApplicationController
   end
 
   def set_user
-    @user = User.find(params[:id])
+    @user = UserSerializer.new(User.find(params[:id])).serializable_hash.to_json
   end
 end
