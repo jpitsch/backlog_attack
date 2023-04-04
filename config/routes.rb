@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
-    resources :users, only: %w[show]
+    resources :users, only: %w[index show update destroy]
   end
 
   devise_for :users,
@@ -14,9 +14,5 @@ Rails.application.routes.draw do
     controllers: {
       sessions: 'api/sessions',
       registrations: 'api/registrations'
-  }
-
-  namespace :api do
-    resources :users
-  end
+    }
 end

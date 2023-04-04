@@ -14,13 +14,13 @@ class Api::UsersController < ApplicationController
   end
 
   def show
-    render json: @user, status: :ok
+    render json: UserSerializer.new(@user).serializable_hash.to_json, status: :ok
   end
 
   def update
     if @user
       @user.update(user_params)
-      render json: @user
+      render json: UserSerializer.new(@user).serializable_hash.to_json
     else
       render json: { message: "BAD_REQUEST" }, status: :bad_request
     end
@@ -40,10 +40,10 @@ class Api::UsersController < ApplicationController
   private
 
   def user_params
-    params.permit(:user_name, :email)
+    params.permit(:id, :user_name, :email)
   end
 
   def set_user
-    @user = UserSerializer.new(User.find(params[:id])).serializable_hash.to_json
+    @user = User.find(params[:id])
   end
 end
