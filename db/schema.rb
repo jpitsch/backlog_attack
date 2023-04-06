@@ -10,9 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_29_161107) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_05_173819) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "games", force: :cascade do |t|
+    t.string "name", default: "", null: false
+    t.string "developer", default: "", null: false
+    t.string "genre"
+    t.string "platform"
+    t.string "box_image"
+    t.integer "story_only"
+    t.integer "story_plus"
+    t.integer "full_completion"
+    t.integer "metacritic_score"
+    t.integer "steam_app_id"
+    t.string "playstion_id"
+    t.string "nintendo_id"
+    t.string "xbox_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "user_name"
