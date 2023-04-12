@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     resources :users, only: %w[index show update destroy]
-    resources :games, only: %w[index show create]
+    resources :games, only: %w[update destroy]
+
+    get 'search', action: :search, controller: 'games'   
   end
 
   devise_for :users,

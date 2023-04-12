@@ -1,0 +1,37 @@
+version: '3.8'
+
+networks:
+  backend:
+
+services:
+  postgres:
+    container_name: postgres_container
+    image: postgres
+    environment:
+      POSTGRES_USER: rails_user
+      POSTGRES_PASSWORD: admin123
+      PGDATA: /data/postgres
+      POSTGRES_DB: backlog_attack
+    volumes:
+       - postgres:/var/postgres
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+
+  elasticsearch:
+    container_name: elastic_container
+    image: elasticsearch:8.7.0
+    environment:
+      - xpack.security.enabled=false
+      - discovery.type=single-node
+    volumes:
+      - elasticsearch:/var/elasticsearch
+    ports:
+      - "9200:9200"
+    restart: unless-stopped
+
+volumes:
+  postgres:
+    external: true
+  elasticsearch:
+    external: true

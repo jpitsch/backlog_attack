@@ -12,6 +12,10 @@ gem "sqlite3", "~> 1.4"
 # Use Postgres database for Active Record
 gem "pg", "~> 1.4"
 
+# Elastic
+gem "elasticsearch-model", "~> 7.2.1"
+gem "elasticsearch-rails", "~> 7.2.1"
+
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 

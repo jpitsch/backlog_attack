@@ -14,7 +14,7 @@ class CreateGames < ActiveRecord::Migration[7.0]
       t.integer :metacritic_score
 
       t.integer :steam_app_id
-      t.string :playstion_id
+      t.string :playstation_id
       t.string :nintendo_id
       t.string :xbox_id
 

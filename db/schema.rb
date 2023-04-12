@@ -25,7 +25,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_05_173819) do
     t.integer "full_completion"
     t.integer "metacritic_score"
     t.integer "steam_app_id"
-    t.string "playstion_id"
+    t.string "playstation_id"
     t.string "nintendo_id"
     t.string "xbox_id"
     t.datetime "created_at", null: false

@@ -15,7 +15,7 @@ development:
   database: backlog_attack
   pool: 5
   host: localhost
-  port: 32768
+  port: 5432
   username: rails_user
   password: admin123
 
