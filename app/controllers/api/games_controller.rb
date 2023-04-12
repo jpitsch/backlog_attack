@@ -2,13 +2,13 @@ class Api::GamesController < ApplicationController
   #before_action :authenticate_user!
 
   def index
-    @games = Game.all
+    response = Game.search(search_params[:q], {})
 
-    if @games
-      render json: { message: "Success", data: @games }, status: :ok
-    else
-      render json: { message: "Error while trying to load games data" }, status: :bad_request
+    games = response.map do |r|
+      r.merge(r.delete('_source')).merge('id': r.delete('_id'))
     end
+
+    render json: { games: games }, status: :ok
   end
 
   def show
@@ -27,17 +27,6 @@ class Api::GamesController < ApplicationController
     else
       render json: { message: @game.errors }, status: :bad_request
     end
-  end
-
-  def search
-    response = Game.search(search_params[:q], {})
-    puts "My results #{response.results.total}"
-
-    games = response.map do |r|
-      r.merge(r.delete('_source')).merge('id': r.delete('_id'))
-    end
-
-    render json: { games: games }, status: :ok
   end
 
   private

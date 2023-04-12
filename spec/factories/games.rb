@@ -10,7 +10,7 @@ FactoryBot.define do
     full_completion { Faker::Number.number(digits: 2) }
     metacritic_score { Faker::Number.number(digits: 2) }
     steam_app_id { Faker::Number.number(digits: 6) }
-    playstion_id {}
+    playstation_id {}
     nintendo_id {}
     xbox_id {}
   end

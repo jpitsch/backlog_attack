@@ -47,8 +47,6 @@ module Searchable
           }
         )
       end
-
-      puts "Search def #{@search_definition}"
  
       __elasticsearch__.search(@search_definition)
     end

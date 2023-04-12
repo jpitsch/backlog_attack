@@ -12,7 +12,7 @@ RSpec.describe 'Games', type: :request do
     end
 
     it 'returns a list of games' do
-      expect(JSON.parse(response.body)["data"].size).to eq(5)
+      expect(JSON.parse(response.body)["games"].size).to eq(5)
       expect(response).to have_http_status(200)
     end
   end
