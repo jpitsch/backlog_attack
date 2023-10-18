@@ -10,6 +10,10 @@ Here are some of the goals that I would like to accomplish as I continue to work
 - Random game chooser which you can use filters to specify what you are in the mood to play.
 - Schedule of all the upcoming games you have planned.
 
+# Pull Requests
+
+TODO: Note make sure all the unit tests pass when creating a PR as they will run on each pull request.
+
 # Configuration
 
 # Database creation
@@ -22,8 +26,6 @@ Run
 
 Verify there are no errors.
 
-# Database initialization
-
 # How to run the test suite
 `bundle exec rspec`
 
@@ -33,4 +35,5 @@ Go [here](https://github.com/faker-ruby/faker#generators) to see all the API lis
 # Deployment instructions
 TODO
 
-* ...
+# How to access the API
+Follow this PR in order to get all the information needed to test the API [here](https://github.com/jpitsch/backlog_attack/pull/3#issue-1654557373)
